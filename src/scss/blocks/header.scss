@@ -1,0 +1,76 @@
+.header {
+  &__inner {
+    padding: 28px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__menu-btn {
+    border: none;
+    background: none;
+    position: relative;
+    width: 32px;
+    height: 31px;
+    cursor: pointer;
+
+    &.active {
+      .header__btn-dec {
+        background-color: transparent;
+
+        &::after,
+        &::before {
+          top: 0;
+          width: 20px;
+        }
+
+        &::after {
+          transform: rotate(45deg);
+        }
+
+        &::before {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  &__btn-dec {
+    position: absolute;
+    width: 22.5px;
+    height: 3px;
+    background-color: $dark;
+    top: calc(50% - 1.5px);
+    left: 3px;
+    transition: .3s;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 15px;
+      height: 3px;
+      background-color: $dark;
+      transition: .3s;
+    }
+
+    &::after {
+      top: -7px;
+    }
+
+    &::before {
+      bottom: -7px;
+    }
+  }
+
+  &__btn {
+    background-color: $pink;
+    padding: 10px 30px;
+    cursor: pointer;
+
+    @media (max-width: 575px) {
+      display: none;
+    }
+  }
+}
