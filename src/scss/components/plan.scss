@@ -26,6 +26,7 @@
 
     @media (max-width:820px) {
       margin-right: 0;
+      padding: 20px;
     }
 
     .plan__price,
@@ -123,6 +124,11 @@
     font-weight: 500;
     font-size: 15px;
     line-height: 22px;
+
+    @media (max-width:820px) {
+      width: 100%;
+      text-align: center;
+    }
   }
 }
 
